@@ -9,6 +9,13 @@
 String = '12'
 Number = 12
 
+// var let and const
+var =  //reassign
+let = //updated not reassign
+const = //never change
+
+
+
 // backslashes starting from outside and end inside of a quote is not the end of the string, 
 const sampleStr = "Alan said, \"Peter is learning JavaScript\".";
 "Alan said, \"Peter is learning JavaScript"
@@ -80,4 +87,100 @@ c += 7;
 5 / 2 = 2 remainder 1
 2 * 2 = 4
 5 - 4 = 1
+
+
+//     |  #special characters#
+
+//     |   Code	     Output
+//     |   \'	     single quote
+//     |   \"	     double quote
+//     |   \\	     backslash
+//     |   \n	     newline
+//     |   \t	     tab
+//     |   \r	     carriage return
+//     |   \b	     backspace
+//     |   \f	     form feed
+
+// Concatenating Strings with Plus Operator
+var myName = 'T' + "S"
+
+let ourStr = "I come first. ";
+ourStr += "I come second.";
+
+console.log("My name is " + myName + ". Thank you!");
+
+
+// Find the Length of a String
+let lastNameLength = 0;
+var lastName = "Lovelace";
+lastNameLength = lastName.length;
+
+// Use Bracket Notation to Find the First Character in a String [index] or [i]
+let firstLetterOfLastName = "";
+var lastName = "Lovelace";
+firstLetterOfLastName = lastName[0];
+
+// Understand String Immutability
+// WRONG
+let myStr = "Bob";
+myStr[0] = "J";
+// CORRECT
+var myStr = "Bob";
+myStr = "Job";
+
+// Use Bracket Notation to Find the Nth Character in a String
+
+const lastName = "Lovelace";
+const thirdLetterOfLastName = lastName[2]; 
+// or
+const lastName = "Lovelace";
+const lastLetterOfLastName = lastName[lastName.length - 1];
+
+// JavaScript Arrays
+var myArray = ["Car", 2010];
+
+// Nest arrays
+const teams = [["Bulls", 23], ["White Sox", 45]];
+
+// Access Array Data with Indexes
+var myArray = [50, 60, 70];
+var myData = myArray[0]
+
+// Modify Array Data
+const myArray = [18, 64, 99];
+myArray[0] = 45
+
+// Access Multi-Dimensional Arrays
+const myArray = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [[10, 11, 12], 13, 14],
+  ];
+  
+  var myData = myArray[2][1]; //in order to find number 8
+  
+//   Push Method adds them to the end of the array
+var arr1 = [1, 2, 3];
+arr1.push(4, 5);
+
+var arr2 = ["Stimpson", "J", "cat"];
+arr2.push(["happy", "joy"]);
+
+// unshift Method adds the element at the beginning of the array
+const ourArray = ["Stimpson", "J", "cat"];
+ourArray.unshift("Happy")
+// or
+const myArray = [["John", 23], ["dog", 3]];
+myArray.shift();
+myArray.unshift(["Paul", 35]);
+
+
+// pop Method pop a value off of the end of an array
+var threeArr = [1, 4, 6];
+var oneDown = threeArr.pop();
+
+// shift Method removes the first element
+var threeArr = [1, 4, 6];
+var oneDown = threeArr.shift();
 
