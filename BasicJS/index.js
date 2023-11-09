@@ -184,3 +184,80 @@ var oneDown = threeArr.pop();
 var threeArr = [1, 4, 6];
 var oneDown = threeArr.shift();
 
+// Shopping List
+
+var myList = [["apple", 12],["banana", 5], ["grapes", 12], ["peach", 2], ["kiwi", 5]];
+
+// Eusable JavaScript with Functions
+function reusableFunction(){
+  console.log("Hi World")
+}
+
+reusableFunction()
+
+
+function myArray(){
+  console.log(myList)
+}
+
+// Functions with Arguments
+
+function sumTotal(sum1, sum2){
+  var total = sum1 + sum2
+  console.log(total);
+}
+
+sumTotal(1,2)
+
+// Function with Return
+function timesFive(num){
+  return num * 5
+}
+
+timesFive(2) //returns 2*5 = 10
+
+// Global Scope and Functions
+
+const myGlobal =10
+function fun1() {
+  oopsGlobal = 5
+}
+
+function fun2() {
+  let output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+
+// Local Scope and Functions
+function myLocalScope() {
+  const myVar = "this is local"
+  console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+
+console.log('outside myLocalScope', myVar);
+
+// Global vs. Local Scope in Functions, local variable takes precedence over the global variable.
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+  const outerWear = "sweater"
+  return outerWear;
+}
+
+myOutfit();
+
+// Assignment with a Returned Value
+let processed = 0;
+
+function processArg(num) {
+  return (num + 3) / 5;
+}
+
+processed = processArg(7)
