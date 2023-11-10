@@ -261,3 +261,6 @@ function processArg(num) {
 }
 
 processed = processArg(7)
+
+
+//Queue is an abstract Data Structure where items are kept in order.
