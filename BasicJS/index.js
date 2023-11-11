@@ -14,7 +14,11 @@ var =  //reassign
 let = //updated not reassign
 const = //never change
 
-
+// Boolean Values: true or false.
+function myBoolean(){
+  return true;
+}
+myBoolean()
 
 // backslashes starting from outside and end inside of a quote is not the end of the string, 
 const sampleStr = "Alan said, \"Peter is learning JavaScript\".";
@@ -135,6 +139,239 @@ const thirdLetterOfLastName = lastName[2];
 // or
 const lastName = "Lovelace";
 const lastLetterOfLastName = lastName[lastName.length - 1];
+
+// If Statements
+function trueOrFalse(wasThatTrue) {
+if(wasThatTrue){
+  return "Yes, that was true"
+}
+return "No, that was false"
+
+}
+trueOrFalse(true)
+trueOrFalse()
+
+// Equality Operator
+function Equality(value){
+  if (value == 12){
+    return "Equal"
+  }
+  return "Not Equal"
+}
+
+Equality(10)
+
+// Strict Equality Operator does not perform a type conversion.
+
+3 ===  3  // true
+3 === '3' // false
+
+
+
+
+// Inequality Operator means not equal and returns false 
+function testNotEqual(val) {
+  if (val!= 99) { 
+    return "Not Equal";
+  }
+  return "Equal";
+}
+
+testNotEqual(10);
+
+// Strict Inequality Operator
+function testStrictNotEqual(val) {
+  if (val !== 17) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+
+testStrictNotEqual(10);
+
+// Greater and Less Operator
+function testGreaterThan(val) {
+  if (val > 100) {  // Change this line
+    return "Over 100";
+  }
+
+  if (val > 10)  {  // Change this line
+    return "Over 10";
+  }
+
+  return "10 or Under";
+}
+
+testGreaterThan(10);
+
+// or
+function testLessThan(val) {
+  if (val < 25) {  // Change this line
+    return "Under 25";
+  }
+
+  if (val < 55) {  // Change this line
+    return "Under 55";
+  }
+
+  return "55 or Over";
+}
+
+testLessThan(10);
+
+// or
+
+function isLess(a, b) {
+  return a < b
+}
+isLess(10, 15);
+
+// "&&" is a logical operator used in programming and computer science. It represents the logical AND operation.
+function testLogicalAnd(val) {
+
+  if (val<= 50 &&  val >= 25) {
+      return "Yes";
+  }
+
+  return "No";
+}
+
+testLogicalAnd(10);
+
+// "||" is a logical operator used in programming and computer science. It represents the logical OR operation.
+function testLogicalOr(val) {
+
+  if (val < 10  || val > 20) {
+    return "Outside";
+  }
+  return "Inside";
+}
+
+testLogicalOr(15);
+
+// Else Statements
+function testElseIf(val) {
+  if (val > 10) {
+    return "Greater than 10";
+  }
+
+  else if (val < 5) {
+    return "Smaller than 5";
+  }
+  else{
+    return "Between 5 and 10";
+  }
+}
+
+testElseIf(7);
+
+// Switch Statements compares the value to the case statements which define various possible values.
+function caseInSwitch(val) {
+  let answer = "";
+switch(val){
+  case 1:
+  return "alpha";
+  break
+
+  case 2:
+  return "beta";
+  break
+  case 3:
+  return "gamma";
+  break
+  case 4:
+  return "delta";
+  break
+}
+
+  return answer;
+}
+
+caseInSwitch(1);
+
+// Adding a Default Option in Switch Statements
+function switchOfStuff(val) {
+  let answer = "";
+
+  switch(val){
+  case "a":
+  return "apple"
+  break
+  case "b":
+  return "bird"
+  break
+  case "c":
+  return "cat"
+  break
+
+  default:
+  return "stuff"
+}
+
+
+  return answer;
+}
+
+switchOfStuff(1);
+
+// and
+
+function sequentialSizes(val) {
+  let answer = "";
+ switch (val) {
+    case 1:
+    case 2:
+    case 3:
+      return "Low";
+      break;
+    case 4:
+    case 5:
+    case 6:
+      return "Mid";
+      break;
+    case 7:
+    case 8:
+    case 9:
+      return "High";
+      break;
+  }
+
+  return answer;
+}
+
+sequentialSizes(1);
+
+// or
+
+function chainToSwitch(val) {
+  let answer = "";
+switch(val){
+  case "bob":
+    answer = "Marley";
+    break;
+  case 42:
+    answer = "The Answer";
+    break;
+  case 1:
+    answer = "There is no #1";
+    break;
+  case 99:
+    answer = "Missed me by this much!";
+    break;
+  case 7:
+    answer = "Ate Nine";
+    break;
+}
+  return answer;
+}
+
+chainToSwitch(7);
+
+
+// typeof tells you the type of Data
+
+typeof 3 //is number
+typeof '3' //is a string
 
 // JavaScript Arrays
 var myArray = ["Car", 2010];
@@ -264,3 +501,16 @@ processed = processArg(7)
 
 
 //Queue is an abstract Data Structure where items are kept in order.
+function nextInLine(arr, item) {
+
+  arr.push(item);
+  return arr.shift();
+  
+}
+
+let testArr = [1, 2, 3, 4, 5];
+
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+
