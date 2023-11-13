@@ -514,3 +514,181 @@ console.log("Before: " + JSON.stringify(testArr));
 console.log(nextInLine(testArr, 6));
 console.log("After: " + JSON.stringify(testArr));
 
+
+// JavaScript Objects
+
+const cat = {
+  "name": "Whiskers",
+  "legs": 4,
+  "tails": 1,
+  "enemies": ["Water", "Dogs"]
+};
+
+// Accessing Object Properties with Dot Notation
+
+const testObj = {
+  "hat": "ballcap",
+  "shirt": "jersey",
+  "shoes": "cleats"
+};
+
+const hatValue = testObj.hat;    
+const shirtValue = testObj.shirt; 
+
+// or with Bracket Notation
+
+const myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock",
+  "NoSpace": "USS Enterprise"
+};
+
+myObj["Space Name"];
+myObj['More Space'];
+myObj["NoSpace"];
+
+// Updating Object Properties
+const myDog = {
+  "name": "Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog["name"] = "Happy Coder"
+// or
+myDog.name = "Happy Coder"
+
+// Add New Properties to a JavaScript Object
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.bark = "woof"
+
+// Delete Properties from a JavaScript Object
+const myDog = {
+  "name": "Happy Coder",
+  "legs": 4,
+  "tails": 1,
+  "friends": ["freeCodeCamp Campers"],
+  "bark": "woof"
+};
+
+
+
+delete myDog.tails
+
+// Using Objects for Lookups
+
+function phoneticLookup(val) {
+  let result = "";
+
+  const lookup = {
+
+      "alpha": "Adams",
+     "bravo": "Boston",
+       "charlie": "Chicago",
+     "delta": "Denver",
+     "echo": "Easy",
+     "foxtrot": "Frank"
+   
+  }
+result = lookup[val]
+
+  return result;
+}
+
+phoneticLookup("charlie");
+
+// Accessing Nested Arrays
+const myPlants = [
+  {
+    type: "flowers",
+    list: [
+      "rose",
+      "tulip",
+      "dandelion"
+    ]
+  },
+  {
+    type: "trees",
+    list: [
+      "fir",
+      "pine",
+      "birch"
+    ]
+  }
+];
+
+const secondTree = myPlants[1].list[1];
+
+// While Loops,  it runs while a specified condition is true and stops once that condition is no longer true.
+var ourArray = [];
+let i = 0;
+
+while (i < 5) {
+  ourArray.push(i);
+  i++;
+}
+
+// or
+
+const myArray = [];
+
+
+let i = 0
+while  (i < 6){
+  myArray.unshift(i);
+  i++;
+}
+
+// JavaScript For Loops it runs for a specific number of times.
+const myArray = [];
+
+for (let i = 1; i < 6; i++){
+myArray.push(i);
+}
+
+// Iterate Through an Array with a For Loop
+const myArr = [2, 3, 4, 5, 6];
+
+
+var total = 0;
+
+for (var i = 0; i < myArr.length; i++) {
+  total += myArr[i];
+}
+
+console.log(total); //result will be the sum = 20
+
+// Nesting For Loops
+function multiplyAll(arr) {
+  let product = 1;
+  
+  for (var i=0; i < arr.length; i++) {
+    for (var j=0; j < arr[i].length; j++) {
+      product *= arr[i][j]
+    }
+  }
+
+  return product;
+}
+
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]); // This fuctuion will put the numbers togheter and multply them
+
+// Do...While Loops
+
+do {
+  myArray.push(i);
+  i++;
+} while (i <= 10);
+
+// difference
+while (i < 5) {
+  myArray.push(i);
+  i++;
+}
