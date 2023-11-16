@@ -184,7 +184,7 @@ function testStrictNotEqual(val) {
   if (val !== 17) { // Change this line
     return "Not Equal";
   }
-  return "Equal";
+  return "Equal";if 
 }
 
 testStrictNotEqual(10);
@@ -692,3 +692,62 @@ while (i < 5) {
   myArray.push(i);
   i++;
 }
+
+
+// Generate Random Fractions with JavaScrip, JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and 1 (exclusive). Thus Math.random() can return a 0 but never return a 1.
+
+function randomFraction() {
+
+
+  return Math.random();
+
+}
+
+// Random Whole Numbers with JavaScript
+
+function randomWholeNum() {
+  return Math.floor(Math.random() * 10);
+}
+
+// Generate Random Whole Numbers within a Range
+function randomNumber(min, max){
+return Math.floor(Math.random() * (max - min + 1)) + min}
+
+// parseInt Function, function parses a string and returns an integer.
+function convertToInteger(str) {
+  return parseInt(str)
+  }
+  
+  convertToInteger("56");
+
+  // Binary number
+
+  function convertToInteger(str) {
+    return parseInt(str, 2);
+   }
+   
+   convertToInteger("10011");
+
+  //  Conditional (Ternary) Operator
+
+  function findGreater(a, b) {
+    return a > b ? "a is greater" : "b is greater or equal";
+  }
+
+  // or
+  function checkEqual(a, b) {
+    return a == b ? "Equal" : "Not Equal";
+    }
+    
+    checkEqual(1, 2);
+
+    
+  // Difference
+  function findGreater(a, b) {
+    if(a > b) {
+      return "a is greater";
+    }
+    else {
+      return "b is greater or equal";
+    }
+  }
