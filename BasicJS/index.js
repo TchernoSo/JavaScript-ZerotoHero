@@ -751,3 +751,69 @@ function convertToInteger(str) {
       return "b is greater or equal";
     }
   }
+
+  // or with else if and else
+  function findGreaterOrEqual(a, b) {
+    return (a === b) ? "a and b are equal" 
+      : (a > b) ? "a is greater" 
+      : "b is greater";
+  }
+
+  // without indentation 
+  function findGreaterOrEqual(a, b) {
+    return (a === b) ? "a and b are equal" : (a > b) ? "a is greater" : "b is greater";
+  }
+
+
+    // Difference
+  function findGreaterOrEqual(a, b) {
+    if (a === b) {
+      return "a and b are equal";
+    }
+    else if (a > b) {
+      return "a is greater";
+    }
+    else {
+      return "b is greater";
+    }
+  }
+
+  // Recursion to Create a Countdown
+
+  // Using push method 
+  function countup(n) {
+    if (n < 1) {
+      return [];
+    } else {
+      const countArray = countup(n - 1);
+      countArray.push(n);
+      return countArray;
+    }
+  }
+  console.log(countup(5));
+
+  // Using unshift method 
+  function countdown(n){
+    if (n < 1) {
+     return [];
+   } else {
+     const arr = countdown(n - 1);
+     arr.unshift(n);
+     return arr;
+   }
+ }
+
+ console.log(countdown(10));
+
+//  Recursion to Create a Range of Numbers
+
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum<startNum){
+  return [];
+  }
+  else{
+    const arr = rangeOfNumbers(startNum, endNum -1)
+    arr.push(endNum);
+    return arr;
+  }
+};
