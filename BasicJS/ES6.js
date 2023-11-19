@@ -102,6 +102,20 @@ console.log(arr2);
 
 
 
+// A function's "this." keyword
+const test = {
+  prop: 42,
+  func: function () {
+    return this.prop;
+  },
+};
+
+console.log(test.func());
+// Expected output: 42
+
+
+
+
 // Destructuring Assignment to Extract Values from Objects
 const user = { name: 'John Doe', age: 34 };
 
@@ -181,3 +195,96 @@ const profileUpdate = (profileData) => {
 const profileUpdate = ({ name, age, nationality, location }) => {
 
 }
+
+
+
+
+
+
+//  Strings using Template Literals
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+  const failureItems = [];
+  for (let i = 0; i < arr.length; i++) {
+    failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+  }
+
+  return failureItems;
+}
+
+const failuresList = makeList(result.failure);
+
+
+
+
+
+//  Concise Object Literal Declarations Using Object Property Shorthand
+
+
+// FROM 
+const createPerson = (name, age, gender) => {
+   Only change code below this line
+  return {
+    name: name,
+    age: age,
+    gender: gender
+  };
+   Only change code above this line
+};
+
+
+// TO 
+
+const createPerson = (name, age, gender) => {
+  return {
+    name,
+    age,
+    gender
+  };
+};
+
+
+
+
+
+//  Concise Declarative Functions with ES6 
+
+// FROM 
+const person = {
+  name: "Taylor",
+  sayHello: function() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+
+
+// TO 
+
+const person = {
+  name: "Taylor",
+  sayHello() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+
+
+
+
+
+// class Syntax to Define a Constructor Function
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+const carrot = new Vegetable('carrot');
+console.log(carrot.name); // Should display 'carrot'
+
+
+
+

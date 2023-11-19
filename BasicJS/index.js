@@ -817,3 +817,48 @@ function rangeOfNumbers(startNum, endNum) {
     return arr;
   }
 };
+
+
+
+
+// Using the Test Method
+let testStr = "freeCodeCamp";
+let testRegex = /Code/;
+testRegex.test(testStr)
+
+// or 
+
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString);
+
+
+
+
+
+// Match Literal Strings
+
+let myString = "Hello, World!";
+let myRegex = /Hello/;
+let result = myRegex.test(myString);
+
+
+
+
+// Match a Literal String with Different Possibilities
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/; // Change this line
+let result = petRegex.test(petString);
+
+
+
+
+
+// Ignore Case While Matching
+let myString = "freeCodeCamp";
+let fccRegex = /freecodecamp/i; 
+let result = fccRegex.test(myString);
+
+
+
+// Extract Matches
