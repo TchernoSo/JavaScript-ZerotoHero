@@ -373,6 +373,12 @@ chainToSwitch(7);
 typeof 3 //is number
 typeof '3' //is a string
 
+let seven = 7;
+let three = "3";
+
+console.log(typeof seven)
+console.log(typeof three)
+
 // JavaScript Arrays
 var myArray = ["Car", 2010];
 
@@ -847,7 +853,7 @@ let result = myRegex.test(myString);
 
 // Match a Literal String with Different Possibilities
 let petString = "James has a pet cat.";
-let petRegex = /dog|cat|bird|fish/; // Change this line
+let petRegex = /dog|cat|bird|fish/; 
 let result = petRegex.test(petString);
 
 
@@ -861,4 +867,87 @@ let result = fccRegex.test(myString);
 
 
 
-// Extract Matches
+
+
+
+
+// Extract Matches More Than the First Match // Extract a pattern more than once, you can use the global search flag: g.
+
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /Twinkle/gi; 
+let result = twinkleStar.match(starRegex); 
+
+
+
+// Match Characters that Occur One or More Time
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/g; 
+let result = difficultSpelling.match(myRegex);
+
+
+// or 
+
+
+// Match Characters that Occur Zero or More Times
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+soccerWord.match(goRegex);
+gPhrase.match(goRegex);
+oPhrase.match(goRegex);
+
+
+// Match Anything with Wildcard Period
+
+
+let humStr = "I'll hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./g;
+huRegex.test(humStr);
+huRegex.test(hugStr);
+
+
+
+
+
+// Match Single Character with Multiple Possibilities
+//you want to match bag, big, and bug but not bog. You can create the regex /b[aiu]g/ to do this. The [aiu] is the character class that will only match the characters a, i, or u.
+
+let bigStr = "big";
+let bagStr = "bag";
+let bugStr = "bug";
+let bogStr = "bog";
+let bgRegex = /b[aiu]g/ig;
+bigStr.match(bgRegex);
+bagStr.match(bgRegex);
+bugStr.match(bgRegex);
+bogStr.match(bgRegex);
+
+
+
+
+// Match Letters of the Alphabet
+// For example, to match lowercase letters a through e you would use [a-e].
+
+let catStr = "cat";
+let batStr = "bat";
+let matStr = "mat";
+let bgRegex = /[a-e]at/ig;
+catStr.match(bgRegex);
+batStr.match(bgRegex);
+matStr.match(bgRegex);
+
+
+
+
+// Match Numbers and Letters of the Alphabet
+//Also, it is possible to combine a range of letters and numbers in a single character set.
+
+let jennyStr = "Jenny8675309";
+let myRegex = /[a-z0-9]/ig;
+jennyStr.match(myRegex);
+
+
+
+
