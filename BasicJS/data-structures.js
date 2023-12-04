@@ -158,3 +158,106 @@ function quickCheck(arr, elem) {
   return arr.indexOf(elem) != -1;
 }
 console.log(quickCheck(["squash", "onions", "shallots"], "mushrooms"));
+
+
+
+
+
+
+// Iterate Through All an Array's Items Using For Loops
+function filteredArray(arr, elem) {
+  let newArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].indexOf(elem) == -1) {
+      newArr.push(arr[i]); //Inserts the element of the array in the new filtered array
+    }
+  }
+
+  return newArr;
+}
+console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
+
+
+
+
+// Create complex multi-dimensional arrays
+
+let threeLevelArray = [
+  "first level",
+  ["Two levels deep", ["Three levels deep"]]
+];
+
+
+
+// Add Key-Value Pairs to JavaScript Objects
+const tekkenCharacter = {
+  player: 'Hwoarang',
+  fightingStyle: 'Tae Kwon Doe',
+  human: true
+};
+
+tekkenCharacter.origin = 'South Korea';
+
+tekkenCharacter['hair color'] = 'dyed orange';
+
+
+
+// Modify an Object Nested Within an Object
+
+let nestedObject = {
+  id: 28802695164,
+  date: 'December 31, 2016',
+  data: {
+    totalUsers: 99,
+    online: 80,
+    onlineStatus: {
+      active: 67,
+      away: 13,
+      busy: 8
+    }
+  }
+};
+
+
+nestedObject.data.onlineStatus.busy = 10;
+
+
+
+
+
+
+// Access Property Names with Bracket Notation
+
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+return foods[scannedItem]
+}
+
+console.log(checkInventory("apples"));
+
+
+//Use the delete Keyword to Remove Object Properties
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+delete foods.oranges
+delete foods.plums
+delete foods.strawberries
+
+console.log(foods);
