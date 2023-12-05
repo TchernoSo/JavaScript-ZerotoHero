@@ -261,3 +261,91 @@ delete foods.plums
 delete foods.strawberries
 
 console.log(foods);
+
+
+
+
+// Check if an Object has a Property. One uses the hasOwnProperty() method and the other uses the in keyword. 
+
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+
+
+users.hasOwnProperty('Alan'); //true
+'Alan' in users; //true
+
+
+
+//Generate an Array of All Object Keys with Object.keys()
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+return Object.keys(obj);
+
+}
+
+console.log(getArrayOfUsers(users)); //Returns a array [ 'Alan', 'Jeff', 'Sarah', 'Ryan' ]
+
+
+
+// Modify an Array Stored in an Object 
+let user = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+  userObj.data.friends.push(friend);
+  return userObj.data.friends;
+}
+
+console.log(addFriend(user, 'Pete'));
