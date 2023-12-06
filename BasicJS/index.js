@@ -951,3 +951,216 @@ jennyStr.match(myRegex);
 
 
 
+
+
+
+
+// Create a Basic JavaScript Object, Objects in JavaScript are used to model real-world objects;
+let duck = {
+  name: "Aflac",
+  numLegs: 2
+};
+
+
+
+
+
+// Use Dot Notation to Access the Properties of an Object
+let duck = {
+  name: "Aflac",
+  numLegs: 2
+};
+console.log(duck.name);
+
+
+
+
+
+// Create a Method on an Object
+let duck = {
+  name: "Aflac",
+  numLegs: 2,
+  sayName: function() {return "The name of this duck is " + duck.name + ".";} //adds the sayName method, which is a function that returns a sentence giving the name of the duck. Notice that the method accessed the name property in the return statement using duck.name.
+};
+duck.sayName();
+
+
+
+// Make Code More Reusable with the this. Keyword; Its like self in python the difference is one is a method and another is not
+
+let duck = {
+  name: "Aflac",
+  numLegs: 2,
+  sayName: function() {return "The name of this duck is " + this.name + ".";}
+};
+
+
+
+
+
+// Define a Constructor Function
+
+//Constructors are defined with a capitalized name to distinguish them from other functions that are not constructors.
+function Bird() {
+  this.name = "Albert";
+  this.color = "blue";
+  this.numLegs = 2;
+}
+
+
+
+
+
+// Use a Constructor to Create Objects
+function Dog() {
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+}
+
+let hound = new Dog()
+
+  // Understand Where an Object’s Prototype Comes From
+  Dog.prototype.isPrototypeOf(hound);
+
+
+
+
+
+
+// Extend Constructors to Receive Arguments, What if you want birds with different values for name and color?
+
+function Dog(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 4;
+  }
+
+  let terrier = new Dog("name", "color")
+
+
+
+
+
+  // Verify an Object's Constructor with instanceof, allows you to compare an object to a constructor, returning true or false based on whether or not that object was created with the constructor.
+  let Bird = function(name, color) {
+    this.name = name;
+    this.color = color;
+    this.numLegs = 2;
+  }
+  
+  let crow = new Bird("Alexis", "black");
+  
+  crow instanceof Bird; //returns true
+
+
+
+  let canary = {
+    name: "Mildred",
+    color: "Yellow",
+    numLegs: 2
+  };
+  
+  canary instanceof Bird; //returns false
+
+
+
+
+
+
+
+
+  // Use Prototype Properties to Reduce Duplicate Code, better way if you whis apply more prototypes on line 1122 on this page
+  function Dog(name) {
+    this.name = name;
+  }
+  
+  
+  let beagle = new Dog("Snoopy");
+  
+  
+  Dog.prototype.numLegs = 2;
+
+// explanation
+
+  function Bird(name) {
+    this.name = name;  //own property
+  }
+  
+  Bird.prototype.numLegs = 2; // prototype property
+
+
+
+
+  // Iterate Over All Properties
+  function Dog(name) {
+    this.name = name;
+  }
+  
+  Dog.prototype.numLegs = 4;
+  
+  let beagle = new Dog("Snoopy");
+  
+  let ownProps = [];
+  let prototypeProps = [];
+  
+  
+  for (let property in beagle) {
+    if(beagle.hasOwnProperty(property)) {
+      ownProps.push(property);
+    } else {
+      prototypeProps.push(property);
+    }
+  }
+  
+  console.log(ownProps);
+  console.log(prototypeProps);
+
+
+
+
+
+
+
+  // Change the Prototype to a New Object
+
+  //Instead 
+  Bird.prototype.eat = function() {
+    console.log("nom nom nom");
+  }
+  
+  Bird.prototype.describe = function() {
+    console.log("My name is " + this.name);
+  }
+
+
+  //Better 
+  Bird.prototype = {
+    numLegs: 2, 
+    eat: function() {
+      console.log("nom nom nom");
+    },
+    describe: function() {
+      console.log("My name is " + this.name);
+    }
+  };
+
+
+
+  // Remember to Set the Constructor Property when Changing the Prototype
+  function Dog(name) {
+    this.name = name;
+  }
+  
+  Dog.prototype = {
+    constructor: Dog, //HERE
+    numLegs: 4,
+    eat: function() {
+      console.log("nom nom nom");
+    },
+    describe: function() {
+      console.log("My name is " + this.name);
+    }
+  };
+
+
