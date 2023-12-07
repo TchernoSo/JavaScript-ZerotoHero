@@ -1164,3 +1164,159 @@ function Dog(name, color) {
   };
 
 
+
+
+
+
+//Use Inheritance So You Don't Repeat Yourself
+
+//Before
+function Cat(name) {
+  this.name = name;
+}
+
+Cat.prototype = {
+  constructor: Cat,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Bear(name) {
+  this.name = name;
+}
+
+Bear.prototype = {
+  constructor: Bear,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+
+//After
+
+
+  function Cat(name) {
+    this.name = name;
+  }
+  
+  Cat.prototype = {
+    constructor: Cat,
+  
+  };
+  
+  function Bear(name) {
+    this.name = name;
+  }
+  
+  Bear.prototype = {
+    constructor: Bear,
+  
+  };
+  
+  function Animal() { }
+  
+  Animal.prototype = { //  by creating a supertype (or parent) called Animal:Since Animal includes the describe method, you can remove it from Cat and Bear;
+    constructor: Animal,
+   eat: function() {
+      console.log("nom nom nom");
+    }
+  };
+
+
+
+
+
+
+  // Set the Child's Prototype to an Instance of the Parent
+  function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+
+
+Dog.prototype = Object.create(Animal.prototype); // this is like the "recipe" for creating an object. In a way, the recipe for Dog now includes all the key "ingredients" from Animal.
+let beagle = new Dog();
+
+
+
+
+
+
+
+// Reset an Inherited Constructor Property
+function Animal() { }
+function Bird() { }
+function Dog() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+Dog.prototype = Object.create(Animal.prototype);
+
+
+let duck = new Bird();
+Bird.prototype.constructor = Bird;
+duck.constructor
+let beagle = new Dog();
+Dog.prototype.constructor = Dog;
+beagle.constructor
+
+
+
+
+
+// Add Methods After Inheritance
+function Animal() { }
+Animal.prototype.eat = function() { console.log("nom nom nom"); };
+
+function Dog() { }
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+Dog.prototype.bark = function() {
+  console.log("Woof!");
+};
+
+
+
+let beagle = new Dog();
+
+
+
+
+// Override Inherited Methods
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+Penguin.prototype.fly = function() { return "Alas, this is a flightless bird."; };
+
+
+
+let penguin = new Penguin();
+console.log(penguin.fly());
+
+
+
+
+// anonymous immediately invoked function expression (IIFE).
+
+//Normal
+function makeNest() {
+  console.log("A cozy nest is ready");
+}
+
+//Anonymous
+(function() {
+  console.log("A cozy nest is ready");
+})();
